@@ -16,11 +16,8 @@ for enhanced gameplay experience.
 ## Getting Started
 
 ## Screenshots
-![](https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png | width=100)
-![](https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png | width=200)
 
-<img src="[https://github.com/favicon.ico](https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png)" width="48">
-<img src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="48">
+<img src="[https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png](https://github.com/user-attachments/assets/bd459af5-28dd-4b48-87e6-fc0ee5c7395c)" width="200">
 ![image](https://github.com/user-attachments/assets/bd459af5-28dd-4b48-87e6-fc0ee5c7395c)
 ![image](https://github.com/user-attachments/assets/32660094-6a2c-4f3f-beb4-defdd7658ee2)
 ![image](https://github.com/user-attachments/assets/ed6b1f8c-28d7-46f7-b216-b19883c29f25)
