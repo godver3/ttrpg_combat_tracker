@@ -1,0 +1,165 @@
+.combatTracker {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-height: calc(100vh - 270px); /* Adjust the height as needed */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Hide scrollbar for WebKit browsers */
+.combatTracker::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for other browsers */
+.combatTracker {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.buttonContainer button {
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 3px;
+}
+
+.buttonContainer button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.combatTimer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+}
+
+.combatantListContainer {
+  max-height: calc(100vh - 200px); /* Adjust the height as needed */
+  overflow-y: auto; /* Enable vertical scrolling */
+  flex-grow: 1;
+}
+
+/* Hide scrollbar for WebKit browsers */
+.combatantListContainer::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for other browsers */
+.combatantListContainer {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.combatantList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.combatant {
+  padding: 10px;
+  margin-bottom: 5px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.entityIcon {
+  margin-right: 8px;
+  width: 20px;
+  height: 20px;
+}
+
+.combatant.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.combatantName {
+  flex-grow: 1;
+  margin-left: 8px;
+  text-align: left;
+}
+
+.combatantStats {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.statItem {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.statItem input,
+.statItem span {
+  width: 60px;
+  padding: 2px 5px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.statItem span {
+  cursor: pointer;
+}
+
+.statItem input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.statItem input[type="number"]::-webkit-inner-spin-button,
+.statItem input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.removeButton {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .buttonContainer {
+    justify-content: space-between;
+  }
+
+  .buttonContainer button {
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  .combatant {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .combatantStats {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+}
