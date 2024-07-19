@@ -1,0 +1,103 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none; /* Ensures links look like buttons */
+  font-size: 16px; /* Ensure consistent font size */
+  font-family: Arial, sans-serif; /* Ensure consistent font family */
+}
+
+.mainContent {
+  display: flex;
+  flex-grow: 1;
+}
+
+.leftColumn,
+.middleColumn,
+.rightColumn {
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.leftColumn {
+  flex: 0.3;
+  background-color: #f7f7f7;
+}
+
+.middleColumn {
+  flex: 0.45;
+}
+
+.rightColumn {
+  flex: 0.25;
+  background-color: #f7f7f7;
+}
+
+.combatOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.combatOptions label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.combatTimer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .leftColumn,
+  .middleColumn,
+  .rightColumn {
+    flex: 1;
+    padding: 10px;
+  }
+
+  .header {
+    flex-direction: column;
+  }
+
+  .button {
+    margin-top: 10px;
+  }
+}

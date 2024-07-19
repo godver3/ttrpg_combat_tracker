@@ -1,0 +1,11 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/": "pages/index.js",
+  "/player-view/[username]": "pages/player-view/[username].js",
+  "/api/user/[username]/combat": "pages/api/user/[username]/combat.js",
+  "/login": "pages/login.js",
+  "/api/login": "pages/api/login.js",
+  "/api/user/[username]": "pages/api/user/[username].js"
+}

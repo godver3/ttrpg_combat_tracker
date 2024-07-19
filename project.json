@@ -1,0 +1,32 @@
+{
+  "project_name": "ttrpg-combat-tracker",
+  "last_updated": "2024-07-14T12:42:38.318356",
+  "files": [
+    {
+      "filename": "src/styles/globals.css",
+      "type": "CSS",
+      "last_modified": "2024-07-14T12:42:38.318377",
+      "content_preview": "@import 'tailwindcss/base';\n@import 'tailwindcss/components';\n@import 'tailwindcss/utilities';\n\n:roo...",
+      "description": "Global CSS file for the TTRPG Combat Tracker project. It imports Tailwind CSS utilities and defines custom variables for color schemes. The file includes responsive design for dark mode, sets up a grid layout for the main container, and defines styles for library, combat tracker, and dice roller columns. Located in the src/styles directory, it's part of the Next.js project structure and uses modern CSS features like custom properties and media queries."
+    },
+    {
+      "filename": "project.json",
+      "type": "JSON",
+      "last_modified": "2024-07-14T12:42:35.710753",
+      "content_preview": "{\n  \"project_name\": \"ttrpg-combat-tracker\",\n  \"last_updated\": \"2024-07-14T12:42:26.883304\",\n  \"files...",
+      "description": "Project configuration file for the TTRPG Combat Tracker. Contains metadata about the project, including its name, last update time, file information, and development server settings. The file indicates that the project uses Next.js as its framework and JavaScript as the primary language. It also provides information about a global CSS file located in the src/styles directory."
+    },
+    {
+      "filename": "src/pages/index.tsx",
+      "type": "TypeScript",
+      "last_modified": "2024-07-14T12:42:38.318356",
+      "content_preview": "import React from 'react';\n\nconst Home: React.FC = () => {\n  return (\n    <div className=\"container mx-auto p-4\">...",
+      "description": "Main page component for the TTRPG Combat Tracker. It defines the layout structure with three columns for Library, Combat Tracker, and Dice Roller. The component uses Tailwind CSS classes for styling and is set up as a functional component with TypeScript."
+    }
+  ],
+  "dev_server": {
+    "start_command": "npm run dev",
+    "framework": "Next.js",
+    "language": "TypeScript"
+  }
+}
