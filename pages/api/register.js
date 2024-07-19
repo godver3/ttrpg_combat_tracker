@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const dataFilePath = path.join(process.cwd(), 'app/data/users.json');
+const dataFilePath = path.join(process.cwd(), 'data/users.json');
 
 export default function handler(req, res) {
   if (req.method === 'POST') {
