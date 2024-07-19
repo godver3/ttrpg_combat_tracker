@@ -1,9 +1,15 @@
 import fs from 'fs';
 import path from 'path';
 
-const dataFilePath = path.join(process.cwd(), 'data/users.json');
+const dataDirPath = path.join(process.cwd(), 'data');
+const dataFilePath = path.join(dataDirPath, 'users.json');
 
 export default function handler(req, res) {
+  // Check if the directory exists, and create it if it doesn't
+  if (!fs.existsSync(dataDirPath)) {
+    fs.mkdirSync(dataDirPath);
+  }
+
   // Check if the file exists, and create it with an empty array if it doesn't
   if (!fs.existsSync(dataFilePath)) {
     fs.writeFileSync(dataFilePath, JSON.stringify([]), 'utf-8');
