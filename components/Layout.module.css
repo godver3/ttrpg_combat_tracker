@@ -57,11 +57,11 @@
 }
 
 .middleColumn {
-  flex: 0.45;
+  flex: 0.50;
 }
 
 .rightColumn {
-  flex: 0.25;
+  flex: 0.20;
   background-color: #f7f7f7;
 }
 
