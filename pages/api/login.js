@@ -4,6 +4,11 @@ import path from 'path';
 const dataFilePath = path.join(process.cwd(), 'data/users.json');
 
 export default function handler(req, res) {
+  // Check if the file exists, and create it with an empty array if it doesn't
+  if (!fs.existsSync(dataFilePath)) {
+    fs.writeFileSync(dataFilePath, JSON.stringify([]), 'utf-8');
+  }
+
   if (req.method === 'POST') {
     const { username, pin } = req.body;
     const users = JSON.parse(fs.readFileSync(dataFilePath, 'utf-8'));
