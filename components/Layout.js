@@ -301,8 +301,15 @@ const Layout = ({ initialCombatState }) => {
             </button>
           </div>
         )}
-        <div className={`${styles.leftColumn} ${isMobile && !showLibraries ? styles.hidden : ''}`}>
-          <h2>Libraries</h2>
+        <div className={`${styles.leftColumn} ${styles.slidePanel} ${showLibraries ? styles.show : ''}`}>
+          <div className={styles.panelHeader}>
+            <h2>Libraries</h2>
+            {isMobile && (
+              <button onClick={toggleLibraries} className={styles.closeButton}>
+                <X size={20} />
+              </button>
+            )}
+          </div>
           <Libraries addToCombat={handleAddToCombat} />
         </div>
         <div className={styles.middleColumn}>
@@ -358,8 +365,15 @@ const Layout = ({ initialCombatState }) => {
             setCurrentTurn={setCurrentTurn}
           />
         </div>
-        <div className={`${styles.rightColumn} ${isMobile && !showDiceRoller ? styles.hidden : ''}`}>
-          <h2>Dice Roller</h2>
+        <div className={`${styles.rightColumn} ${styles.slidePanel} ${showDiceRoller ? styles.show : ''}`}>
+          <div className={styles.panelHeader}>
+            <h2>Dice Roller</h2>
+            {isMobile && (
+              <button onClick={toggleDiceRoller} className={styles.closeButton}>
+                <X size={20} />
+              </button>
+            )}
+          </div>
           <DiceRoller />
         </div>
       </div>

@@ -43,6 +43,7 @@
   display: flex;
   flex-grow: 1;
   overflow: hidden;
+  position: relative;
 }
 
 .leftColumn,
@@ -83,6 +84,24 @@
   font-size: 14px;
 }
 
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  /*background-color: #e0e0e0;*/
+  /*border-bottom: 1px solid #ccc;*/
+}
+
+.panelHeader h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.closeButton {
+  display: none; /* Hide close button by default */
+}
+
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
@@ -104,14 +123,62 @@
     background-color: #f0f0f0;
   }
 
-  .leftColumn,
-  .middleColumn,
-  .rightColumn {
+  .middleColumn {
     flex: none;
     width: 100%;
   }
 
-  .hidden {
-    display: none;
+  .slidePanel {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 80%;
+    max-width: 300px;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .leftColumn {
+    left: 0;
+    transform: translateX(-100%);
+  }
+
+  .rightColumn {
+    right: 0;
+    transform: translateX(100%);
+  }
+
+  .show {
+    transform: translateX(0);
+  }
+
+  .leftColumn.show + .middleColumn,
+  .rightColumn.show + .middleColumn {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  .panelHeader {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .closeButton {
+    display: flex; /* Show close button on mobile */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+  }
+
+  .closeButton:hover {
+    color: #333;
   }
 }
