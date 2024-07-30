@@ -17,6 +17,7 @@
 
 .header h1 {
   margin: 0;
+  font-size: 1.5rem;
 }
 
 .buttonContainer {
@@ -34,14 +35,14 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  text-decoration: none; /* Ensures links look like buttons */
-  font-size: 16px; /* Ensure consistent font size */
-  font-family: Arial, sans-serif; /* Ensure consistent font family */
+  text-decoration: none;
+  font-size: 14px;
 }
 
 .mainContent {
   display: flex;
   flex-grow: 1;
+  overflow: hidden;
 }
 
 .leftColumn,
@@ -57,47 +58,60 @@
 }
 
 .middleColumn {
-  flex: 0.50;
+  flex: 0.5;
 }
 
 .rightColumn {
-  flex: 0.20;
+  flex: 0.2;
   background-color: #f7f7f7;
 }
 
-.combatOptions {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 10px;
+.mobileControls {
+  display: none;
 }
 
-.combatOptions label {
+.mobileToggle {
   display: flex;
   align-items: center;
   gap: 5px;
-}
-
-.combatTimer {
-  display: flex;
-  align-items: center;
-  gap: 5px;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
   font-size: 14px;
 }
 
 @media (max-width: 768px) {
-  .leftColumn,
-  .middleColumn,
-  .rightColumn {
-    flex: 1;
-    padding: 10px;
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  .header {
+  .buttonContainer {
+    margin-top: 10px;
+  }
+
+  .mainContent {
     flex-direction: column;
   }
 
-  .button {
-    margin-top: 10px;
+  .mobileControls {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f0f0f0;
+  }
+
+  .leftColumn,
+  .middleColumn,
+  .rightColumn {
+    flex: none;
+    width: 100%;
+  }
+
+  .hidden {
+    display: none;
   }
 }

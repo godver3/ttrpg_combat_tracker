@@ -4,7 +4,7 @@ import styles from './Layout.module.css';
 import Libraries from './Libraries';
 import DiceRoller from './DiceRoller';
 import CombatTracker from './CombatTracker';
-import { LogOut, Clock, Link as LinkIcon } from 'lucide-react';
+import { LogOut, Clock, Link as LinkIcon, Menu, X } from 'lucide-react';
 import isBrowser from '../lib/isBrowser';
 
 const Layout = ({ initialCombatState }) => {
@@ -20,6 +20,19 @@ const Layout = ({ initialCombatState }) => {
   const [librariesOpen, setLibrariesOpen] = useState(false);
   const [diceRollerOpen, setDiceRollerOpen] = useState(false);
   const [feedback, setFeedback] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const [showLibraries, setShowLibraries] = useState(false);
+  const [showDiceRoller, setShowDiceRoller] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     if (isBrowser) {
@@ -259,6 +272,9 @@ const Layout = ({ initialCombatState }) => {
     setCombatTime(0);
   };
 
+  const toggleLibraries = () => setShowLibraries(!showLibraries);
+  const toggleDiceRoller = () => setShowDiceRoller(!showDiceRoller);
+
   return (
     <div className={styles.layout}>
       <div className={styles.header}>
@@ -275,7 +291,17 @@ const Layout = ({ initialCombatState }) => {
         )}
       </div>
       <div className={styles.mainContent}>
-        <div className={styles.leftColumn}>
+        {isMobile && (
+          <div className={styles.mobileControls}>
+            <button onClick={toggleLibraries} className={styles.mobileToggle}>
+              {showLibraries ? <X size={20} /> : <Menu size={20} />} Libraries
+            </button>
+            <button onClick={toggleDiceRoller} className={styles.mobileToggle}>
+              {showDiceRoller ? <X size={20} /> : <Menu size={20} />} Dice Roller
+            </button>
+          </div>
+        )}
+        <div className={`${styles.leftColumn} ${isMobile && !showLibraries ? styles.hidden : ''}`}>
           <h2>Libraries</h2>
           <Libraries addToCombat={handleAddToCombat} />
         </div>
@@ -332,7 +358,7 @@ const Layout = ({ initialCombatState }) => {
             setCurrentTurn={setCurrentTurn}
           />
         </div>
-        <div className={styles.rightColumn}>
+        <div className={`${styles.rightColumn} ${isMobile && !showDiceRoller ? styles.hidden : ''}`}>
           <h2>Dice Roller</h2>
           <DiceRoller />
         </div>
