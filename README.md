@@ -15,6 +15,13 @@ for enhanced gameplay experience.
 
 ## Getting Started
 
+## Screenshots
+
+![image](https://github.com/user-attachments/assets/bd459af5-28dd-4b48-87e6-fc0ee5c7395c)
+![image](https://github.com/user-attachments/assets/32660094-6a2c-4f3f-beb4-defdd7658ee2)
+![image](https://github.com/user-attachments/assets/ed6b1f8c-28d7-46f7-b216-b19883c29f25)
+![image](https://github.com/user-attachments/assets/fb59035a-70ea-4379-84f9-ebe1080a5278)
+
 ### Prerequisites
 
 Make sure you have Docker and Docker Compose installed on your system.
@@ -33,6 +40,10 @@ Make sure you have Docker and Docker Compose installed on your system.
 2. Build and run the application using Docker Compose:
 
    ```docker-compose up --build```
+
+## Note
+
+I built this project out of personal interest using almost exclusively generative AI tools. I found it extremely interested and learned quite a bit about nodeJS along the way.
 
 This will build the Docker images and start the application. The application
 will be accessible on port 4006.
